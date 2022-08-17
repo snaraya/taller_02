@@ -37,7 +37,7 @@ Opciones que se pueden utilizar en los chunks:
 library(knitr)
 library(kableExtra)
 
-readxl::read_excel("tablas.xlsx") %>% 
+readxl::read_excel("input/tablas.xlsx") %>% 
   kable() %>% 
   kable_styling(bootstrap_options = c("striped", "hover", "condensed"))
 ```
@@ -86,7 +86,7 @@ Pero ¿de qué hablamos cuando hablamos de los formatos de las variables?
 Conocer en qué formato están nuestras variables nos hace la vida más fácil, porque nos permite utilizar funciones de acuerdo a su formato, especialmente cuando utilizamos el `tidyverse`.
 
 ```{r tabla_formatos}
-readxl::read_excel("tablas.xlsx", sheet = "tabla_formatos") %>% 
+readxl::read_excel("input/tablas.xlsx", sheet = "tabla_formatos") %>% 
   knitr::kable() %>% 
   kable_styling(bootstrap_options = c("striped")) %>% 
   column_spec(1, width_min = "3cm", bold = T) %>% 
@@ -164,7 +164,7 @@ Ya exploramos nuestros datos y convertimos nuestra base de datos en una base tid
 ```{r tabla_graficos}
 options(knitr.kable.NA = '')
 
-readxl::read_excel("tablas.xlsx", sheet = "tabla_graficos") %>% 
+readxl::read_excel("input/tablas.xlsx", sheet = "tabla_graficos") %>% 
   knitr::kable() %>% 
   kable_styling(bootstrap_options = c("striped")) %>% 
   column_spec(1, width_min = "3cm", bold = T) %>% 
